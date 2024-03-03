@@ -1,10 +1,9 @@
 package org.spring.oauth2.email_validate_register.service.email;
 
 import org.junit.jupiter.api.Test;
+import org.spring.oauth2.email_validate_register.email.service.EmailSenderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class EmailSenderServiceImplTest {

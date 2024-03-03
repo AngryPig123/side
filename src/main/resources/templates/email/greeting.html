@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Email Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666666;
+        }
+
+        .email-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .email-address {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="email-title">이메일 타이틀 표시: <span th:text="${title}">기본 타이틀</span></h1>
+    <p>인증에 관련된 안내 ..... ToDO 토큰 부분을 확인하고 다시 체크한다.</p>
+    <p>수신자 : <span class="email-address" th:text="${email}">example@google.com</span></p>
+    <hr>
+</div>
+</body>
+</html>

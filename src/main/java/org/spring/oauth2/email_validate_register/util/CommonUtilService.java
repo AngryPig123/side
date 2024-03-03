@@ -1,6 +1,6 @@
 package org.spring.oauth2.email_validate_register.util;
 
-import org.spring.oauth2.email_validate_register.dto.AuthorityDto;
+import org.spring.oauth2.email_validate_register.roleauth.dto.AuthorityDto;
 import org.spring.oauth2.email_validate_register.roleauth.entity.Authority;
 import org.spring.oauth2.email_validate_register.roleauth.entity.Roles;
 import org.spring.oauth2.email_validate_register.user.entity.User;
