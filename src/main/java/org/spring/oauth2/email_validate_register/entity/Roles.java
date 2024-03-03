@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.spring.oauth2.email_validate_register.entity.etc.BaseEntity;
+import org.spring.oauth2.email_validate_register.user.entity.User;
 
 
 import java.util.ArrayList;
@@ -31,4 +34,15 @@ public class Roles extends BaseEntity {
     @OneToMany(mappedBy = "roleId", fetch = LAZY)
     private List<RoleAuthority> roleAuthorities = new ArrayList<>();
 
+    public Roles(String roleName) {
+        this.roleName = roleName;
+    }
+
+    @Override
+    public String toString() {
+        return "Roles{" +
+                "roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
+                '}';
+    }
 }

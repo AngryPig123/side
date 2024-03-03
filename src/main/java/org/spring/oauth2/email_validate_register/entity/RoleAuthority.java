@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.spring.oauth2.email_validate_register.entity.etc.BaseEntity;
+import org.spring.oauth2.email_validate_register.entity.etc.RoleAuthorityId;
 
 import static jakarta.persistence.FetchType.LAZY;
 
@@ -12,7 +14,7 @@ import static jakarta.persistence.FetchType.LAZY;
 @Getter
 @Table(name = "role_auth")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class RoleAuthority {
+public class RoleAuthority extends BaseEntity {
 
     @EmbeddedId
     private RoleAuthorityId id;

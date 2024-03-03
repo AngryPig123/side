@@ -1,6 +1,6 @@
 package org.spring.oauth2.email_validate_register.repository;
 
-import org.spring.oauth2.email_validate_register.entity.User;
+import org.spring.oauth2.email_validate_register.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

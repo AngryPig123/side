@@ -1,10 +1,14 @@
-package org.spring.oauth2.email_validate_register.entity;
+package org.spring.oauth2.email_validate_register.user.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
+import org.spring.oauth2.email_validate_register.user.dto.UserDto;
+import org.spring.oauth2.email_validate_register.entity.Roles;
+import org.spring.oauth2.email_validate_register.entity.etc.BaseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -48,6 +52,7 @@ public class User extends BaseEntity implements UserDetails {
     @Column(name = "enabled", nullable = false)
     private boolean enabled;
 
+    @Setter
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "role_id")
     private Roles roles;
@@ -59,6 +64,14 @@ public class User extends BaseEntity implements UserDetails {
         this.accountNonLocked = true;
         this.credentialsNonExpired = true;
         this.enabled = true;
+    }
+
+    public UserDto toDto() {
+        return UserDto.builder()
+                .userEmail(userEmail)
+                .password(password)
+                .roleName(roles.getRoleName())
+                .build();
     }
 
     @Override

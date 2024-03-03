@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.spring.oauth2.email_validate_register.dto.UserDto;
+import org.spring.oauth2.email_validate_register.user.dto.UserDto;
 
 import java.util.List;
 

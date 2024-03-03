@@ -2,8 +2,10 @@ package org.spring.oauth2.email_validate_register.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.spring.oauth2.email_validate_register.entity.etc.BaseEntity;
 
 
 import java.util.ArrayList;
@@ -31,5 +33,11 @@ public class Authority extends BaseEntity {
 
     @OneToMany(mappedBy = "authorityId", fetch = LAZY)
     private List<RoleAuthority> roleAuthorities = new ArrayList<>();
+
+    @Builder
+    public Authority(String authorityName, String endPoint) {
+        this.authorityName = authorityName;
+        this.endPoint = endPoint;
+    }
 
 }
