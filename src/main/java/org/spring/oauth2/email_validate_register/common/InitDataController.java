@@ -3,9 +3,10 @@ package org.spring.oauth2.email_validate_register.common;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.spring.oauth2.email_validate_register.dto.AuthorityDto;
+import org.spring.oauth2.email_validate_register.dto.RequestBodyContainer;
 import org.spring.oauth2.email_validate_register.user.dto.UserDto;
-import org.spring.oauth2.email_validate_register.entity.Authority;
-import org.spring.oauth2.email_validate_register.entity.Roles;
+import org.spring.oauth2.email_validate_register.roleauth.entity.Authority;
+import org.spring.oauth2.email_validate_register.roleauth.entity.Roles;
 import org.spring.oauth2.email_validate_register.user.entity.User;
 import org.spring.oauth2.email_validate_register.util.CommonUtilService;
 import org.springframework.web.bind.annotation.*;
@@ -43,13 +44,5 @@ public class InitDataController {
         return authorities;
     }
 
-
-    @Getter
-    @Setter
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class RequestBodyContainer<T> {
-        private T data;
-    }
 
 }

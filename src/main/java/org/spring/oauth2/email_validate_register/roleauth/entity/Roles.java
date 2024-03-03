@@ -1,11 +1,10 @@
-package org.spring.oauth2.email_validate_register.entity;
+package org.spring.oauth2.email_validate_register.roleauth.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-import org.spring.oauth2.email_validate_register.entity.etc.BaseEntity;
+import org.spring.oauth2.email_validate_register.entity.BaseEntity;
 import org.spring.oauth2.email_validate_register.user.entity.User;
 
 

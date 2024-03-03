@@ -3,9 +3,7 @@ package org.spring.oauth2.email_validate_register.user;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.spring.oauth2.email_validate_register.entity.Roles;
 import org.spring.oauth2.email_validate_register.user.dto.UserDto;
-import org.spring.oauth2.email_validate_register.user.entity.User;
 import org.spring.oauth2.email_validate_register.user.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

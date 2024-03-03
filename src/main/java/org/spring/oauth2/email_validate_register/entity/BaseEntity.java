@@ -1,4 +1,4 @@
-package org.spring.oauth2.email_validate_register.entity.etc;
+package org.spring.oauth2.email_validate_register.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

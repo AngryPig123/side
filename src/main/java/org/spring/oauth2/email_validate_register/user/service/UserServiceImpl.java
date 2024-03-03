@@ -2,7 +2,7 @@ package org.spring.oauth2.email_validate_register.user.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.spring.oauth2.email_validate_register.entity.Roles;
+import org.spring.oauth2.email_validate_register.roleauth.entity.Roles;
 import org.spring.oauth2.email_validate_register.repository.RolesRepository;
 import org.spring.oauth2.email_validate_register.repository.UserRepository;
 import org.spring.oauth2.email_validate_register.user.dto.UserDto;
