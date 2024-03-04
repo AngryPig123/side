@@ -28,7 +28,7 @@ public class RoleAuthorityServiceImpl implements RoleAuthorityService {
     private final RoleAuthorityRepository roleAuthorityRepository;
 
     @Override
-    public List<RoleAuthorityDto> insertRoleAuthority(List<RoleAuthorityDto> roleAuthorityDtoList) {
+    public List<RoleAuthorityDto.ConvertName> insertRoleAuthority(List<RoleAuthorityDto> roleAuthorityDtoList) {
         List<RoleAuthorityId> roleAuthorityIds = roleAuthorityDtoList.stream().map(RoleAuthorityDto::toRoleAuthorityId).toList();
         List<RoleAuthority> roleAuthorities = roleAuthorityIds.stream()
                 .map(item -> {

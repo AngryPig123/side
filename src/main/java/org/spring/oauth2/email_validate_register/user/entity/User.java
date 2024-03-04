@@ -57,8 +57,9 @@ public class User extends BaseEntity implements UserDetails {
     @JoinColumn(name = "role_id")
     private Roles roles;
 
-    public User(String userEmail, String password) {
+    public User(String userEmail, String password, Roles roles) {
         this.userEmail = userEmail;
+        this.roles = roles;
         this.password = password;
         this.accountNonExpired = true;
         this.accountNonLocked = true;
