@@ -5,8 +5,8 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.spring.oauth2.email_validate_register.entity.BaseEntity;
+import org.spring.oauth2.email_validate_register.roleauth.dto.RolesDto;
 import org.spring.oauth2.email_validate_register.user.entity.User;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +37,10 @@ public class Roles extends BaseEntity {
         this.roleName = roleName;
     }
 
+    public RolesDto toDto() {
+        return new RolesDto(roleName);
+    }
+
     @Override
     public String toString() {
         return "Roles{" +
@@ -44,4 +48,5 @@ public class Roles extends BaseEntity {
                 ", roleName='" + roleName + '\'' +
                 '}';
     }
+
 }

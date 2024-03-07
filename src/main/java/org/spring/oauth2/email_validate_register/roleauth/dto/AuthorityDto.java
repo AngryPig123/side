@@ -1,4 +1,4 @@
-package org.spring.oauth2.email_validate_register.dto;
+package org.spring.oauth2.email_validate_register.roleauth.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

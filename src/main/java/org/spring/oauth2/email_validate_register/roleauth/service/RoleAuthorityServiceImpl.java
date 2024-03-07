@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -29,10 +28,8 @@ public class RoleAuthorityServiceImpl implements RoleAuthorityService {
     private final RoleAuthorityRepository roleAuthorityRepository;
 
     @Override
-    public List<RoleAuthorityDto> insertRoleAuthority(List<RoleAuthorityDto> roleAuthorityDtoList) {
-
+    public List<RoleAuthorityDto.ConvertName> insertRoleAuthority(List<RoleAuthorityDto> roleAuthorityDtoList) {
         List<RoleAuthorityId> roleAuthorityIds = roleAuthorityDtoList.stream().map(RoleAuthorityDto::toRoleAuthorityId).toList();
-
         List<RoleAuthority> roleAuthorities = roleAuthorityIds.stream()
                 .map(item -> {
                     Optional<Authority> findAuthority = authorityRepository.findById(item.getAuthorityId());
@@ -52,6 +49,5 @@ public class RoleAuthorityServiceImpl implements RoleAuthorityService {
 
         return resultList.stream().map(RoleAuthority::toDto).toList();
     }
-
 
 }

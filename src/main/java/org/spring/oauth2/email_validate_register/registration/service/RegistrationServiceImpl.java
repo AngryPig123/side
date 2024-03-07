@@ -1,4 +1,4 @@
-package org.spring.oauth2.email_validate_register.service;
+package org.spring.oauth2.email_validate_register.registration.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -24,4 +24,19 @@ public class RoleAuthorityDto {
         return new RoleAuthorityId(roleId, authorityId);
     }
 
+
+    @Getter
+    @Setter
+    @ToString
+    @NoArgsConstructor
+    public static class ConvertName {
+        private String roleName;
+        private String authorityName;
+
+        public ConvertName(String roleName, String authorityName) {
+            this.roleName = roleName;
+            this.authorityName = authorityName;
+        }
+    }
+
 }

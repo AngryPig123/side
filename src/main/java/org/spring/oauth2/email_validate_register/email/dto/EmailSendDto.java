@@ -1,4 +1,4 @@
-package org.spring.oauth2.email_validate_register.dto;
+package org.spring.oauth2.email_validate_register.email.dto;
 
 import lombok.*;
 
@@ -12,15 +12,13 @@ public class EmailSendDto {
 
     private String toEmailAddress;
     private String emailTitle;
-    private String content;
     private LocalDateTime sendDate;
 
     @Builder
-    public EmailSendDto(String toEmailAddress, String emailTitle, String content, LocalDateTime sendDate) {
+    public EmailSendDto(String toEmailAddress, String emailTitle) {
         this.toEmailAddress = toEmailAddress;
         this.emailTitle = emailTitle;
-        this.content = content;
-        this.sendDate = sendDate;
+        this.sendDate = LocalDateTime.now();
     }
 
 }

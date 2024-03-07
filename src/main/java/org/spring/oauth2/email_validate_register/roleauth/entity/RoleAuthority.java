@@ -36,8 +36,8 @@ public class RoleAuthority extends BaseEntity {
         this.authorityId = authorityId;
     }
 
-    public RoleAuthorityDto toDto() {
-        return new RoleAuthorityDto(roleId.getRoleId(), authorityId.getAuthorityId());
+    public RoleAuthorityDto.ConvertName toDto() {
+        return new RoleAuthorityDto.ConvertName(roleId.getRoleName(), authorityId.getAuthorityName());
     }
 
 }
