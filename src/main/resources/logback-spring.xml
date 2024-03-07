@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    
+
+    <property resource="log/log.properties"/>
+
     <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss" timeReference="contextBirth"/>
     <timestamp key="byDay" datePattern="yyyy-MM-dd"/>
     <timestamp key="byYear" datePattern="yyyy"/>
@@ -10,8 +12,8 @@
     <timestamp key="byMin" datePattern="mm"/>
     <timestamp key="bySec" datePattern="ss"/>
 
-    <property name="PROJECT_NAME" value="docker_project"/>
-    <property name="LOGS_PATH" value="./logs/${PROJECT_NAME}/${byDay}"/>
+    <property name="PROJECT_NAME" value="${log.project.name}"/>
+    <property name="LOGS_PATH" value="${log.file.path}/${PROJECT_NAME}/${byDay}"/>
 
     <property name="CONSOLE_PATTERN"
               value="%green(%d{yyyy-MM-dd HH:mm:ss}) %boldWhite([ %thread ]) %green([traceId : %X{traceId}]) %boldCyan([ %-5level]) %boldWhite([%logger{36}]) - %msg%n"/>
