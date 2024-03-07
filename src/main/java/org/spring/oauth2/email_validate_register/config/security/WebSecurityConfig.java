@@ -2,6 +2,7 @@ package org.spring.oauth2.email_validate_register.config.security;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.spring.oauth2.email_validate_register.config.security.filter.MDCLoggingFilter;
 import org.spring.oauth2.email_validate_register.config.security.user.CustomAuthenticationProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +13,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -33,6 +35,7 @@ public class WebSecurityConfig {
         http
                 .cors(AbstractHttpConfigurer::disable)
                 .csrf(AbstractHttpConfigurer::disable)
+                .addFilterAt(new MDCLoggingFilter(), BasicAuthenticationFilter.class)
                 .authenticationProvider(customAuthenticationProvider)
                 .authorizeHttpRequests(
                         (requests) -> requests
